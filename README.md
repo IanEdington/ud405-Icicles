@@ -28,40 +28,40 @@ In this exercise you'll set up and draw the first icicle. There are very detaile
 We recommend completing the TODOs working through the files in the following order
 
 1. Constants
-    - [ ] Add a constant for the world size
-    - [ ] Add a constant for the background color of the world
-    - [ ] Add a constant for the height of the icicle
-    - [ ] Add a constant for the width of the icicle
-    - [ ] Add a constant for the color of the icicles
+    - [x] Add a constant for the world size
+    - [x] Add a constant for the background color of the world
+    - [x] Add a constant for the height of the icicle
+    - [x] Add a constant for the width of the icicle
+    - [x] Add a constant for the color of the icicles
 2. Icicle
-    - [ ] Add a Vector2 position
-    - [ ] Add a constructor that sets the position
-    - [ ] Add a render function that takes a ShapeRenderer
-    - [ ] Set the ShapeRenderer's color
-    - [ ] Set the ShapeType
-    - [ ] Draw the icicle using the size constants
+    - [x] Add a Vector2 position
+    - [x] Add a constructor that sets the position
+    - [x] Add a render function that takes a ShapeRenderer
+    - [x] Set the ShapeRenderer's color
+    - [x] Set the ShapeType
+    - [x] Draw the icicle using the size constants
 3. IciclesScreen
     - definitions
-        - [ ] Add an ExtendViewport
-        - [ ] Add a ShapeRenderer
-        - [ ] Add an Icicle
+        - [x] Add an ExtendViewport
+        - [x] Add a ShapeRenderer
+        - [x] Add an Icicle
     - show()
-        - [ ] Initialize the viewport using the world size constant
-        - [ ] Initialize the ShapeRenderer
-        - [ ] Set autoShapeType(true) on the ShapeRenderer
-        - [ ] Create a new Icicle in the middle of the world
+        - [x] Initialize the viewport using the world size constant
+        - [x] Initialize the ShapeRenderer
+        - [x] Set autoShapeType(true) on the ShapeRenderer
+        - [x] Create a new Icicle in the middle of the world
     - resize()
-        - [ ] Ensure that the viewport updates correctly
+        - [x] Ensure that the viewport updates correctly
     - render()
-        - [ ] Apply the viewport
-        - [ ] Clear the screen to the background color
-        - [ ] Set the ShapeRenderer's projection matrix
-        - [ ] Draw the Icicle
+        - [x] Apply the viewport
+        - [x] Clear the screen to the background color
+        - [x] Set the ShapeRenderer's projection matrix
+        - [x] Draw the Icicle
     - hide()
-        - [ ] Dispose of the ShapeRenderer
+        - [x] Dispose of the ShapeRenderer
 4. IciclesGame
     - create()
-        - [ ] call setScreen() with a new IciclesScreen()
+        - [x] call setScreen() with a new IciclesScreen()
 
 ## 1.7.04 The Player
 In this exercise, you'll add the player! We recommend completing the TODOs working through the files in the following order
