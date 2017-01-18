@@ -92,15 +92,15 @@ In this exercise, you'll add the player! We recommend completing the TODOs worki
 In this exercise, you'll add control of the player! We recommend completing the TODOs working through the files in the following order
 
 1. Constants
-    - [ ] Add Constant for player movement speed
+    - [x] Add Constant for player movement speed
 2. Player
     - update()
-        - [ ] Use Gdx.input.isKeyPressed() to move the player in the appropriate direction when an arrow key is pressed
+        - [x] Use Gdx.input.isKeyPressed() to move the player in the appropriate direction when an arrow key is pressed
     - ensureInBounds()
-        - [ ] Complete this function to ensure the player is within the viewport
+        - [x] Complete this function to ensure the player is within the viewport
 3. IciclesScreen
     - render()
-        - [ ] Call update() on player
+        - [x] Call update() on player
 
 ## 1.7.06 Accelerometer Controls
 In this exercise, you will set up accelerometer controls!
