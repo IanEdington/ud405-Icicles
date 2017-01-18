@@ -10,10 +10,10 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 public class IciclesScreen implements Screen {
-
     private ExtendViewport viewport;
     private ShapeRenderer renderer;
     private Icicle icicle;
+    private Player player;
 
     @Override
     public void show() {
@@ -22,6 +22,7 @@ public class IciclesScreen implements Screen {
         renderer.setAutoShapeType(true);
 
         icicle = new Icicle(WORLD_SIZE / 2, WORLD_SIZE / 2);
+        player = new Player(viewport);
     }
 
     @Override
@@ -33,12 +34,14 @@ public class IciclesScreen implements Screen {
 
         renderer.begin(ShapeRenderer.ShapeType.Filled);
         icicle.render(renderer);
+        player.render(renderer);
         renderer.end();
     }
 
     @Override
     public void resize(int width, int height) {
         viewport.update(width, height, true);
+        player = new Player(viewport);
     }
 
     @Override

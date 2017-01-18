@@ -67,26 +67,26 @@ We recommend completing the TODOs working through the files in the following ord
 In this exercise, you'll add the player! We recommend completing the TODOs working through the files in the following order
 
 1. Constants
-    - [ ] Add constant for player head radius
-    - [ ] Add constant for player head height
-    - [ ] Add constant for player limb width
-    - [ ] Add constant for circle segments for the player's head
-    - [ ] Add constant for the player's color
+    - [x] Add constant for player head radius
+    - [x] Add constant for player head height
+    - [x] Add constant for player limb width
+    - [x] Add constant for circle segments for the player's head
+    - [x] Add constant for the player's color
 2. Player
-    - [ ] Add a position (add constants to Constants.java first)
-    - [ ] Add a viewport
-    - [ ] Add constructor that accepts and sets the viewport, then calls init()
-    - [ ] Add init() function that moves the character to the bottom center of the screen
-    - [ ] Create a render function that accepts a ShapeRenderer and does the actual drawing
+    - [x] Add a position (add constants to Constants.java first)
+    - [x] Add a viewport
+    - [x] Add constructor that accepts and sets the viewport, then calls init()
+    - [x] Add init() function that moves the character to the bottom center of the screen
+    - [x] Create a render function that accepts a ShapeRenderer and does the actual drawing
 3. IciclesScreen
     - definitions
-    - [ ] Add a Player (complete Player.java first)
+    - [x] Add a Player (complete Player.java first)
     - show()
-        - [ ] Initialize the player
+        - [x] Initialize the player
     - resize()
-        - [ ] Reset the player (using init())
+        - [x] Reset the player (using init())
     - render()
-        - [ ] Call render() on the player
+        - [x] Call render() on the player
 
 ## 1.7.05 Arrow Key Controls
 In this exercise, you'll add control of the player! We recommend completing the TODOs working through the files in the following order
