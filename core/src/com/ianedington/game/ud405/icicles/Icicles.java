@@ -3,27 +3,34 @@ package com.ianedington.game.ud405.icicles;
 import static com.ianedington.game.ud405.icicles.Constants.Iccl;
 import static com.ianedington.game.ud405.icicles.Constants.WORLD_SIZE;
 
-import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import java.util.Random;
 
 class Icicles {
-    private Array<Icicle> icicles;
+    private DelayedRemovalArray<Icicle> icicles;
     private Viewport viewport;
     private Random random;
     private float spawn = 1;
 
     protected Icicles(Viewport viewport) {
         this.viewport = viewport;
-        icicles = new Array<Icicle>(false, 16);
+        icicles = new DelayedRemovalArray<Icicle>(false, 16);
         random = new Random();
     }
 
     protected void update(float delta) {
+        icicles.begin();
+
         // Update existing icicles
-        for (Icicle icicle: icicles) {
-            icicle.update(delta);
+        for (int i = 0; i < icicles.size; i++) {
+            Icicle icicle = icicles.get(i);
+            if (icicle.isOnScreen()) {
+                icicle.update(delta);
+            } else {
+                icicles.removeIndex(i);
+            }
         }
 
         // add new Icicle
@@ -32,9 +39,10 @@ class Icicles {
             icicles.add(new Icicle(
                     random.nextFloat() * viewport.getWorldWidth(),
                     viewport.getWorldHeight()));
-                    //0));
             spawn--;
         }
+
+        icicles.end();
     }
 
     protected void render(ShapeRenderer renderer) {

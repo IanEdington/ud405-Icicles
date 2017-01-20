@@ -150,13 +150,13 @@ In this exercise, you will set up accelerometer controls!
 ## 1.7.08 Remove Stale Icicles
 
 1. Icicles
-    - [ ] Use a DelayedRemovalArray to hold our icicles
+    - [x] Use a DelayedRemovalArray to hold our icicles
     - init()
-        - [ ] Initialize the DelayedRemovalArray
+        - [x] Initialize the DelayedRemovalArray
     - update()
-        - [ ] begin a removal session
-        - [ ] Remove any icicle completely off the bottom of the screen
-        - [ ] End removal session
+        - [x] begin a removal session
+        - [x] Remove any icicle completely off the bottom of the screen
+        - [x] End removal session
 
 ## 1.8.01 Icicle Head Collision Detection
 1. Player

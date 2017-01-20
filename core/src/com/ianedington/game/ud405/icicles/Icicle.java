@@ -26,4 +26,9 @@ public class Icicle {
                           pos.x + Iccl.WIDTH, pos.y + Iccl.HEIGHT,
                           pos.x - Iccl.WIDTH, pos.y + Iccl.HEIGHT);
     }
+
+    protected boolean isOnScreen() {
+        if (pos.y < 0) return false;
+        return true;
+    }
 }
