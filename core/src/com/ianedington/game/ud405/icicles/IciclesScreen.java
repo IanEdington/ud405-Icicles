@@ -12,7 +12,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 public class IciclesScreen implements Screen {
     private ExtendViewport viewport;
     private ShapeRenderer renderer;
-    private Icicle icicle;
+    private Icicles icicles;
     private Player player;
 
     @Override
@@ -21,7 +21,7 @@ public class IciclesScreen implements Screen {
         renderer = new ShapeRenderer();
         renderer.setAutoShapeType(true);
 
-        icicle = new Icicle(WORLD_SIZE / 2, WORLD_SIZE / 2);
+        icicles = new Icicles(viewport);
         player = new Player(viewport);
     }
 
@@ -32,9 +32,11 @@ public class IciclesScreen implements Screen {
         Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT);
         renderer.setProjectionMatrix(viewport.getCamera().combined);
 
-        renderer.begin(ShapeRenderer.ShapeType.Filled);
-        icicle.render(renderer);
+        icicles.update(delta);
         player.update(delta);
+
+        renderer.begin(ShapeRenderer.ShapeType.Filled);
+        icicles.render(renderer);
         player.render(renderer);
         renderer.end();
     }
@@ -43,6 +45,7 @@ public class IciclesScreen implements Screen {
     public void resize(int width, int height) {
         viewport.update(width, height, true);
         player = new Player(viewport);
+        icicles.reset(viewport);
     }
 
     @Override

@@ -5,9 +5,15 @@ import com.badlogic.gdx.graphics.Color;
 final class Constants {
     public static float WORLD_SIZE = 100;
     public static Color BKGND_COLOR = Color.BLUE;
-    public static float ICICLE_HEIGHT = 10;
-    public static float ICICLE_WIDTH = 2;
-    public static Color ICICLE_COLOR = Color.BLACK;
+
+    // Icicle constants
+    public final static class Iccl {
+        public static float HEIGHT = 10;
+        public static float WIDTH = 2;
+        public static float SPAWN = 8;
+        public static float ACCEL = 0.05f;
+        public static Color COLOR = Color.WHITE;
+    }
 
     // Character constants relative to left foot.
     public final static class Plyr {

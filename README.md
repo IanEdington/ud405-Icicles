@@ -116,36 +116,36 @@ In this exercise, you will set up accelerometer controls!
 ## 1.7.07 Add the Icicles
 
 1. Constants
-    - [ ] Add constant for icicle acceleration
-    - [ ] Add constant for icicle spawns per second
+    - [x] Add constant for icicle acceleration
+    - [x] Add constant for icicle spawns per second
 2. Icicle
-    - [ ] Add Vector2 for velocity
+    - [x] Add Vector2 for velocity
     - Icicle()
-        - [ ] Initialize velocity
+        - [x] Initialize velocity
     - Update()
-        - [ ] Update velocity using icicle accelration constant
-        - [ ] Update position using velocity
+        - [x] Update velocity using icicle accelration constant
+        - [x] Update position using velocity
 3. Icicles
-    - [ ] Add an array of icicles and a viewport
+    - [x] Add an array of icicles and a viewport
     - init()
-        - [ ] Initialize the array of icicles
+        - [x] Initialize the array of icicles
     - update()
-        - [ ] Replace hard-coded spawn rate with a constant
-        - [ ] Randomly add new icicles `if (MathUtils.random() < delta * 5) {`
-        - [ ] Add a new icicle at the top of the viewport at a random x position
-        - [ ] Update each icicle
+        - [x] Replace hard-coded spawn rate with a constant
+        - [x] Randomly add new icicles `if (MathUtils.random() < delta * 5) {`
+        - [x] Add a new icicle at the top of the viewport at a random x position
+        - [x] Update each icicle
     - render()
-        - [ ] Set ShapeRenderer Color
-        - [ ] Render each icicle
+        - [x] Set ShapeRenderer Color
+        - [x] Render each icicle
 4. IciclesScreen
-    - [ ] Add an instance of Icicles
+    - [x] Add an instance of Icicles
     - show()
-        - [ ] Initialize icicles
+        - [x] Initialize icicles
     - resize()
-        - [ ] Reset icicles
+        - [x] Reset icicles
     - render()
-        - [ ] Update Icicles
-        - [ ] Render Icicles
+        - [x] Update Icicles
+        - [x] Render Icicles
 
 ## 1.7.08 Remove Stale Icicles
 
