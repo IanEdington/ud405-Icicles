@@ -20,13 +20,15 @@ class Icicles {
         random = new Random();
     }
 
-    protected void update(float delta) {
+    protected boolean update(float delta, Player player) {
         icicles.begin();
 
         // Update existing icicles
         for (int i = 0; i < icicles.size; i++) {
             Icicle icicle = icicles.get(i);
-            if (icicle.isOnScreen()) {
+            if (icicle.hitPlayer(player)) {
+                return false;
+            } else if (icicle.isOnScreen()) {
                 icicle.update(delta);
             } else {
                 icicles.removeIndex(i);
@@ -43,6 +45,7 @@ class Icicles {
         }
 
         icicles.end();
+        return true;
     }
 
     protected void render(ShapeRenderer renderer) {

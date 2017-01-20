@@ -161,10 +161,10 @@ In this exercise, you will set up accelerometer controls!
 ## 1.8.01 Icicle Head Collision Detection
 1. Player
     - render()
-        - [ ] Check if the player was hit by an icicle. If so, reset the icicles.
+        - [x] Check if the player was hit by an icicle. If so, reset the icicles.
 2. IciclesScreen
     - hitByIcicle()
-        - [ ] Loop over icicles, checking if the point of any icicle is within the player's head
+        - [x] Loop over icicles, checking if the point of any icicle is within the player's head
 
 ## 1.8.02 Add The HUD
 1. Constants

@@ -14,6 +14,7 @@ public class IciclesScreen implements Screen {
     private ShapeRenderer renderer;
     private Icicles icicles;
     private Player player;
+    private boolean stillPlaying;
 
     @Override
     public void show() {
@@ -23,6 +24,7 @@ public class IciclesScreen implements Screen {
 
         icicles = new Icicles(viewport);
         player = new Player(viewport);
+        stillPlaying = true;
     }
 
     @Override
@@ -32,12 +34,14 @@ public class IciclesScreen implements Screen {
         Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT);
         renderer.setProjectionMatrix(viewport.getCamera().combined);
 
-        icicles.update(delta);
-        player.update(delta);
+        if (stillPlaying) {
+            player.update(delta);
+            stillPlaying = icicles.update(delta, player);
+        }
 
         renderer.begin(ShapeRenderer.ShapeType.Filled);
         icicles.render(renderer);
-        player.render(renderer);
+        player.render(renderer, !stillPlaying);
         renderer.end();
     }
 

@@ -18,6 +18,7 @@ final class Constants {
     // Character constants relative to left foot.
     public final static class Plyr {
         public static Color COLOR = Color.BLACK;
+        public static Color END_COLOR = Color.RED;
         public static float SCALE = 5;
         public static float SPEED = SCALE * 10;
         public static float LINE_WIDTH = SCALE / 4;
@@ -34,6 +35,7 @@ final class Constants {
         public static float HEAD_X = L_FT_X + SCALE;
         public static float HEAD_Y = L_FT_Y + SCALE * 6;
         public static float HEAD_RADIUS = SCALE;
+        public static float HEAD_RADIUS2 = HEAD_RADIUS * HEAD_RADIUS;
         public static int HEAD_SEGMENTS = (int) (SCALE * HEAD_RADIUS);
         public static float BODY_WIDTH = R_FT_X - L_FT_X;
     }

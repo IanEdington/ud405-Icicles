@@ -31,4 +31,8 @@ public class Icicle {
         if (pos.y < 0) return false;
         return true;
     }
+
+    protected boolean hitPlayer(Player player) {
+        return player.contact(pos);
+    }
 }
