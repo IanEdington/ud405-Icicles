@@ -201,36 +201,36 @@ In this exercise, you will set up accelerometer controls!
         - [x] Draw the score and top score in the top right
         - [x] End the SpriteBatch
 3. Player
-    - [ ] Add counter for number of deaths
+    - [x] Add counter for number of deaths
     - Player()
-        - [ ] Set number of deaths to zero
+        - [x] Set number of deaths to zero
     - hitByIcicle()
-        - [ ] If the player was hit, increment death counter
+        - [x] If the player was hit, increment death counter
 
 ## 1.8.03 Add Difficultly Levels
 1. Constants
-    - [ ] Create constants for difficulty labels ("Cold", "Colder", "Coldest")
-    - [ ] Create constants for the icicle spawn rates for the various difficulties
-    - [ ] Create Difficulty enum holding the spawn rate and label for each difficulty
+    - [x] Create constants for difficulty labels ("Cold", "Colder", "Coldest")
+    - [x] Create constants for the icicle spawn rates for the various difficulties
+    - [x] Create Difficulty enum holding the spawn rate and label for each difficulty
 2. Icicles
-    - [ ] Add a Difficulty
+    - [x] Add a Difficulty
     - constructor
-        - [ ] Accept a difficulty in the constructor
-        - [ ] Set difficulty
+        - [x] Accept a difficulty in the constructor
+        - [x] Set difficulty
     - update()
-        - [ ] Use the difficulty's spawn rate
+        - [x] Use the difficulty's spawn rate
 3. IciclesGame
     - create()
-        - [ ] Create IciclesScreen with a Difficulty
+        - [x] Create IciclesScreen with a Difficulty
 4. IciclesScreen
-    - [ ] Add Difficulty
+    - [x] Add Difficulty
     - constructor
-        - [ ] Accept a Difficulty in the constructor
-        - [ ] Set Difficulty
+        - [x] Accept a Difficulty in the constructor
+        - [x] Set Difficulty
     - show()
-        - [ ] Initialize icicles with the difficulty
+        - [x] Initialize icicles with the difficulty
     - render()
-        - [ ] Show Difficulty level in the top left
+        - [x] Show Difficulty level in the top left
 
 ## 1.8.04 Add Difficulty Select Screen
 1. Constants.java

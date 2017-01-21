@@ -16,7 +16,6 @@ final class Constants {
     public static final class Iccl {
         public static float HEIGHT = 10;
         public static float WIDTH = 2;
-        public static float SPAWN = 8;
         public static float ACCEL = 0.05f;
         public static Color COLOR = Color.WHITE;
     }
@@ -44,5 +43,20 @@ final class Constants {
         public static float HEAD_RADIUS2 = HEAD_RADIUS * HEAD_RADIUS;
         public static int HEAD_SEGMENTS = (int) (SCALE * HEAD_RADIUS);
         public static float BODY_WIDTH = R_FT_X - L_FT_X;
+    }
+
+    public enum Difficulty {
+        COLD(8),
+        COLDER(12),
+        COLDEST(18);
+
+        private final float spawnRate; // in meters
+        Difficulty(float spawnRate) {
+            this.spawnRate = spawnRate;
+        }
+
+        public float getSpawnRate() {
+            return this.spawnRate;
+        }
     }
 }

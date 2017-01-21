@@ -1,6 +1,7 @@
 package com.ianedington.game.ud405.icicles;
 
 import static com.ianedington.game.ud405.icicles.Constants.BKGND_COLOR;
+import static com.ianedington.game.ud405.icicles.Constants.Difficulty;
 import static com.ianedington.game.ud405.icicles.Constants.Hud;
 import static com.ianedington.game.ud405.icicles.Constants.WORLD_SIZE;
 
@@ -20,6 +21,7 @@ public class IciclesScreen implements Screen {
     private ShapeRenderer renderer;
 
     private Icicles icicles;
+    private Difficulty difficulty;
     private Player player;
     private boolean stillPlaying;
     private int highScore;
@@ -28,13 +30,18 @@ public class IciclesScreen implements Screen {
     private ScreenViewport hudViewport;
     private BitmapFont font;
 
+    public IciclesScreen(Difficulty difficulty) {
+        super();
+        this.difficulty = difficulty;
+    }
+
     @Override
     public void show() {
         viewport = new ExtendViewport(WORLD_SIZE, WORLD_SIZE);
         renderer = new ShapeRenderer();
         renderer.setAutoShapeType(true);
 
-        icicles = new Icicles(viewport);
+        icicles = new Icicles(viewport, difficulty);
         player = new Player(viewport);
         stillPlaying = true;
 
@@ -72,7 +79,8 @@ public class IciclesScreen implements Screen {
         batch.begin();
         float hudHeight = hudViewport.getWorldHeight();
         float hudWidth = hudViewport.getWorldWidth();
-        String message = String.format("Player Deaths: %d", player.getDeaths());
+        String message = String.format("Player Deaths: %d\nDifficulty: %s",
+                player.getDeaths(), difficulty);
         font.draw(batch, message, Hud.MARGIN, hudHeight - Hud.MARGIN);
         message = String.format("Score: %d\nHigh Score: %d", icicles.getScore(), highScore);
         font.draw(batch, message, hudWidth - Hud.MARGIN, hudHeight - Hud.MARGIN,

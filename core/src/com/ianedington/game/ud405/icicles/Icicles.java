@@ -1,5 +1,6 @@
 package com.ianedington.game.ud405.icicles;
 
+import static com.ianedington.game.ud405.icicles.Constants.Difficulty;
 import static com.ianedington.game.ud405.icicles.Constants.Iccl;
 import static com.ianedington.game.ud405.icicles.Constants.WORLD_SIZE;
 
@@ -14,9 +15,11 @@ class Icicles {
     private Random random;
     private float spawn;
     private int score;
+    private Difficulty difficulty;
 
-    protected Icicles(Viewport viewport) {
+    protected Icicles(Viewport viewport, Difficulty difficulty) {
         this.viewport = viewport;
+        this.difficulty = difficulty;
         icicles = new DelayedRemovalArray<Icicle>(false, 16);
         random = new Random();
         spawn = 1;
@@ -40,7 +43,7 @@ class Icicles {
         }
 
         // add new Icicle
-        spawn += delta * Iccl.SPAWN;
+        spawn += delta * difficulty.getSpawnRate();
         while (spawn > 1) {
             icicles.add(new Icicle(
                     random.nextFloat() * viewport.getWorldWidth(),
