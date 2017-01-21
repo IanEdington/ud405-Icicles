@@ -9,6 +9,7 @@ final class Constants {
     // the hud
     public static final class Hud {
         public static float MARGIN = 10;
+        public static float FONT_PROPORTION = 480;
     }
 
     // Icicle constants

@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
@@ -74,7 +75,8 @@ public class IciclesScreen implements Screen {
         String message = String.format("Player Deaths: %d", player.getDeaths());
         font.draw(batch, message, Hud.MARGIN, hudHeight - Hud.MARGIN);
         message = String.format("Score: %d\nHigh Score: %d", icicles.getScore(), highScore);
-        font.draw(batch, message, hudWidth - 100, hudHeight - 40);
+        font.draw(batch, message, hudWidth - Hud.MARGIN, hudHeight - Hud.MARGIN,
+                0, Align.right, false);
         batch.end();
     }
 
@@ -85,7 +87,7 @@ public class IciclesScreen implements Screen {
         icicles.reset(viewport);
 
         hudViewport.update(width, height, true);
-        font.getData().setScale(Float.min(width, height) / (5 * WORLD_SIZE));
+        font.getData().setScale(Float.min(width, height) / Hud.FONT_PROPORTION);
     }
 
     @Override
