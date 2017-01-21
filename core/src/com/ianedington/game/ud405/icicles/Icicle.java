@@ -9,7 +9,7 @@ public class Icicle {
     private Vector2 pos;
     private Vector2 vel;
 
-    public Icicle (float x, float y) {
+    public Icicle(float x, float y) {
         pos = new Vector2(x, y);
         vel = new Vector2(0, 0);
     }
@@ -19,7 +19,7 @@ public class Icicle {
         pos.y -= vel.y;
     }
 
-    public void render (ShapeRenderer renderer) {
+    protected void render(ShapeRenderer renderer) {
         renderer.setColor(Iccl.COLOR);
         renderer.set(ShapeRenderer.ShapeType.Filled);
         renderer.triangle(pos.x, pos.y,
@@ -28,7 +28,9 @@ public class Icicle {
     }
 
     protected boolean isOnScreen() {
-        if (pos.y < 0) return false;
+        if (pos.y < 0) {
+            return false;
+        }
         return true;
     }
 

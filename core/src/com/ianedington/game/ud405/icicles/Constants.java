@@ -6,8 +6,13 @@ final class Constants {
     public static float WORLD_SIZE = 100;
     public static Color BKGND_COLOR = Color.BLUE;
 
+    // the hud
+    public static final class Hud {
+        public static float MARGIN = 10;
+    }
+
     // Icicle constants
-    public final static class Iccl {
+    public static final class Iccl {
         public static float HEIGHT = 10;
         public static float WIDTH = 2;
         public static float SPAWN = 8;
@@ -16,7 +21,7 @@ final class Constants {
     }
 
     // Character constants relative to left foot.
-    public final static class Plyr {
+    public static final class Plyr {
         public static Color COLOR = Color.BLACK;
         public static Color END_COLOR = Color.RED;
         public static float SCALE = 5;

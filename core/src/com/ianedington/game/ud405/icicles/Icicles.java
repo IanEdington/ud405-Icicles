@@ -3,21 +3,24 @@ package com.ianedington.game.ud405.icicles;
 import static com.ianedington.game.ud405.icicles.Constants.Iccl;
 import static com.ianedington.game.ud405.icicles.Constants.WORLD_SIZE;
 
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.DelayedRemovalArray;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import java.util.Random;
 
 class Icicles {
     private DelayedRemovalArray<Icicle> icicles;
     private Viewport viewport;
     private Random random;
-    private float spawn = 1;
+    private float spawn;
+    private int score;
 
     protected Icicles(Viewport viewport) {
         this.viewport = viewport;
         icicles = new DelayedRemovalArray<Icicle>(false, 16);
         random = new Random();
+        spawn = 1;
+        score = 0;
     }
 
     protected boolean update(float delta, Player player) {
@@ -32,6 +35,7 @@ class Icicles {
                 icicle.update(delta);
             } else {
                 icicles.removeIndex(i);
+                score++;
             }
         }
 
@@ -57,5 +61,15 @@ class Icicles {
 
     protected void reset(Viewport viewport) {
         this.viewport = viewport;
+    }
+
+    protected int getScore() {
+        return score;
+    }
+
+    protected void newGame() {
+        icicles = new DelayedRemovalArray<Icicle>(false, 16);
+        spawn = 1;
+        score = 0;
     }
 }

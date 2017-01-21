@@ -168,38 +168,38 @@ In this exercise, you will set up accelerometer controls!
 
 ## 1.8.02 Add The HUD
 1. Constants
-    - [ ] Add screen reference size for scaling the HUD (480 works well)
-    - [ ] Add constant for the margin between the HUD and screen edge
+    - [x] Add screen reference size for scaling the HUD (480 works well)
+    - [x] Add constant for the margin between the HUD and screen edge
 2. Icicles
-    - [ ] Add counter for how many icicles have been dodged
+    - [x] Add counter for how many icicles have been dodged
     - init()
-        - [ ] Set icicles dodged count to zero
+        - [x] Set icicles dodged count to zero
     - update()
-        - [ ] Increment count of icicles dodged
+        - [x] Increment count of icicles dodged
 3. IciclesScreen
-    - [ ] Add ScreenViewport for HUD
-    - [ ] Add SpriteBatch
-    - [ ] Add BitmapFont
-    - [ ] Add int to hold the top score
+    - [x] Add ScreenViewport for HUD
+    - [x] Add SpriteBatch
+    - [x] Add BitmapFont
+    - [x] Add int to hold the top score
     - show()
-        - [ ] Initialize the HUD viewport
-        - [ ] Initialize the SpriteBatch
-        - [ ] Initialize the BitmapFont
-        - [ ] Give the font a linear TextureFilter
-        - [ ] Set top score to zero
+        - [x] Initialize the HUD viewport
+        - [x] Initialize the SpriteBatch
+        - [x] Initialize the BitmapFont
+        - [x] Give the font a linear TextureFilter
+        - [x] Set top score to zero
     - resize()
-        - [ ] Update HUD viewport
-        - [ ] Set font scale to min(width, height) / reference screen size
+        - [x] Update HUD viewport
+        - [x] Set font scale to min(width, height) / reference screen size
     - dispose()
-        - [ ] Dispose of the SpriteBatch and font
+        - [x] Dispose of the SpriteBatch and font
     - render()
-        - [ ] Set the top score to max(topScore, iciclesDodges)
-        - [ ] Apply the HUD viewport
-        - [ ] Set the SpriteBatch's projection matrix
-        - [ ] Begin the SpriteBatch
-        - [ ] Draw the number of player deaths in the top left
-        - [ ] Draw the score and top score in the top right
-        - [ ] End the SpriteBatch
+        - [x] Set the top score to max(topScore, iciclesDodges)
+        - [x] Apply the HUD viewport
+        - [x] Set the SpriteBatch's projection matrix
+        - [x] Begin the SpriteBatch
+        - [x] Draw the number of player deaths in the top left
+        - [x] Draw the score and top score in the top right
+        - [x] End the SpriteBatch
 3. Player
     - [ ] Add counter for number of deaths
     - Player()
