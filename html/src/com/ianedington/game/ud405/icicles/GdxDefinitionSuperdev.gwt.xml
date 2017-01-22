@@ -4,10 +4,10 @@
 	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 
     <inherits name='com.ianedington.game.ud405.icicles.GdxDefinition' />
-    
+
     <collapse-all-properties />
-    
-	<add-linker name="xsiframe"/>	
+
+	<add-linker name="xsiframe"/>
 	<set-configuration-property name="devModeRedirectEnabled" value="true"/>
-	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>	
+	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
 </module>

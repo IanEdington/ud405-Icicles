@@ -16,6 +16,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import java.lang.Math;
 
 public class IciclesScreen extends InputAdapter implements Screen {
     private IciclesGame game;
@@ -69,7 +70,7 @@ public class IciclesScreen extends InputAdapter implements Screen {
             stillPlaying = true;
         }
 
-        highScore = Integer.max(icicles.getScore(), highScore);
+        highScore = Math.max(icicles.getScore(), highScore);
 
         renderer.begin(ShapeRenderer.ShapeType.Filled);
         icicles.render(renderer);
@@ -103,7 +104,7 @@ public class IciclesScreen extends InputAdapter implements Screen {
         icicles.reset(viewport);
 
         hudViewport.update(width, height, true);
-        font.getData().setScale(Float.min(width, height) / Hud.FONT_PROPORTION);
+        font.getData().setScale(Math.min(width, height) / Hud.FONT_PROPORTION);
     }
 
     @Override

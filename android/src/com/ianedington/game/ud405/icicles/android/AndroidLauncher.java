@@ -1,4 +1,4 @@
-package com.ianedington.game.ud405.icicles;
+package com.ianedington.game.ud405.icicles.android;
 
 import android.os.Bundle;
 

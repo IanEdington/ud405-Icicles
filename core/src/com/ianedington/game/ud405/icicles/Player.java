@@ -7,6 +7,7 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import java.lang.Math;
 
 public class Player {
     Vector2 pos;
@@ -36,8 +37,8 @@ public class Player {
         }
 
         // ensure player is in bounds
-        pos.x = Float.min(
-                Float.max(pos.x, Plyr.BODY_WIDTH / 2),
+        pos.x = Math.min(
+                Math.max(pos.x, Plyr.BODY_WIDTH / 2),
                 viewport.getWorldWidth() - Plyr.BODY_WIDTH / 2);
     }
 
