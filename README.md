@@ -234,36 +234,36 @@ In this exercise, you will set up accelerometer controls!
 
 ## 1.8.04 Add Difficulty Select Screen
 1. Constants.java
-    - [ ] Add constants for the color of each difficulty select circle
-    - [ ] Add constant for the size of the difficulty world
-    - [ ] Add constant for the radius of the difficulty select "buttons"
-    - [ ] Add constant for the scale of the difficulty labels (1.5 works well)
-    - [ ] Add Vector2 constants for the centers of the difficulty select buttons
+    - [x] Add constants for the color of each difficulty select circle
+    - [x] Add constant for the size of the difficulty world
+    - [x] Add constant for the radius of the difficulty select "buttons"
+    - [x] Add constant for the scale of the difficulty labels (1.5 works well)
+    - [x] Add Vector2 constants for the centers of the difficulty select buttons
 2. DifficultyScreen.java
     - show()
-        - [ ] Initialize a FitViewport with the difficulty world size constant
-        - [ ] Set the font scale using the constant we defined
+        - [x] Initialize a FitViewport with the difficulty world size constant
+        - [x] Set the font scale using the constant we defined
     - render()
-        - [ ] Apply the viewport
-        - [ ] Set the ShapeRenderer's projection matrix
-        - [ ] Use ShapeRenderer to draw the buttons
-        - [ ] Set the SpriteBatche's projection matrix
-        - [ ] Use SpriteBatch to draw the labels on the buttons
+        - [x] Apply the viewport
+        - [x] Set the ShapeRenderer's projection matrix
+        - [x] Use ShapeRenderer to draw the buttons
+        - [x] Set the SpriteBatche's projection matrix
+        - [x] Use SpriteBatch to draw the labels on the buttons
             - HINT: Use GlyphLayout to get vertical centering
     - resize()
-        - [ ] Update the viewport
+        - [x] Update the viewport
     - touchDown()
-        - [ ] Unproject the touch from the screen to the world
-        - [ ] Check if the touch was inside a button, and launch the icicles screen with the appropriate difficulty
+        - [x] Unproject the touch from the screen to the world
+        - [x] Check if the touch was inside a button, and launch the icicles screen with the appropriate difficulty
 3. IciclesGame.java
     - showDifficultyScreen
-        - [ ] Show the difficulty screen
+        - [x] Show the difficulty screen
     - showIciclesScreen()
-        - [ ] Show the Icicles screen with the appropriate difficulty
+        - [x] Show the Icicles screen with the appropriate difficulty
 4. IciclesScreen
-    - [ ] Add IciclesGame member variable
+    - [x] Add IciclesGame member variable
     - constructor
-        - [ ] Accept IciclesGame in the constructor
-        - [ ] Save the IciclesGame
+        - [x] Accept IciclesGame in the constructor
+        - [x] Save the IciclesGame
     - touchDown
-        - [ ] Tell IciclesGame to show the difficulty screen
+        - [x] Tell IciclesGame to show the difficulty screen

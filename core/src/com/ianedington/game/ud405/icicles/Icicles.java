@@ -43,7 +43,7 @@ class Icicles {
         }
 
         // add new Icicle
-        spawn += delta * difficulty.getSpawnRate();
+        spawn += delta * difficulty.spawnRate;
         while (spawn > 1) {
             icicles.add(new Icicle(
                     random.nextFloat() * viewport.getWorldWidth(),

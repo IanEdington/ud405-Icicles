@@ -7,10 +7,18 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 
 public class IciclesGame extends Game {
-    Difficulty difficulty = Difficulty.COLDEST;
+    protected Difficulty difficulty = Difficulty.COLD;
 
     @Override
     public void create() {
-        setScreen(new IciclesScreen(difficulty));
+        setScreen(new DifficultyScreen(this));
+    }
+
+    protected void showDifficultyScreen() {
+        setScreen(new DifficultyScreen(this));
+    }
+
+    protected void showIcicleScreen() {
+        setScreen(new IciclesScreen(this));
     }
 }

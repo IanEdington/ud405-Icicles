@@ -46,17 +46,26 @@ final class Constants {
     }
 
     public enum Difficulty {
-        COLD(8),
-        COLDER(12),
-        COLDEST(18);
+        COLD(8, Color.BLUE, 50, 150),
+        COLDER(12, Color.CYAN, 150, 150),
+        COLDEST(18, Color.DARK_GRAY, 250, 150);
 
-        private final float spawnRate; // in meters
-        Difficulty(float spawnRate) {
+        public static float WORLD_SIZE = 300;
+        public static Color BKGND_COLOR = Color.BLACK;
+        public static float BTN_RADIUS = 40;
+        public static float BTN_RADIUS2 = BTN_RADIUS * BTN_RADIUS;
+        public static float BTN_SCALE = 1f;
+
+        public float spawnRate; // in meters
+        public Color color; // in meters
+        public float btnPosX;
+        public float btnPosY;
+
+        Difficulty(float spawnRate, Color color, float x, float y) {
             this.spawnRate = spawnRate;
-        }
-
-        public float getSpawnRate() {
-            return this.spawnRate;
+            this.color = color;
+            this.btnPosX = x;
+            this.btnPosY = y;
         }
     }
 }

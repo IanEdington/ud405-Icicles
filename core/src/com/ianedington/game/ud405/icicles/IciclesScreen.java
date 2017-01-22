@@ -6,6 +6,7 @@ import static com.ianedington.game.ud405.icicles.Constants.Hud;
 import static com.ianedington.game.ud405.icicles.Constants.WORLD_SIZE;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
@@ -16,12 +17,13 @@ import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
-public class IciclesScreen implements Screen {
+public class IciclesScreen extends InputAdapter implements Screen {
+    private IciclesGame game;
+
     private ExtendViewport viewport;
     private ShapeRenderer renderer;
 
     private Icicles icicles;
-    private Difficulty difficulty;
     private Player player;
     private boolean stillPlaying;
     private int highScore;
@@ -30,9 +32,9 @@ public class IciclesScreen implements Screen {
     private ScreenViewport hudViewport;
     private BitmapFont font;
 
-    public IciclesScreen(Difficulty difficulty) {
-        super();
-        this.difficulty = difficulty;
+    public IciclesScreen(IciclesGame game) {
+        this.game = game;
+        Gdx.input.setInputProcessor(this);
     }
 
     @Override
@@ -41,7 +43,7 @@ public class IciclesScreen implements Screen {
         renderer = new ShapeRenderer();
         renderer.setAutoShapeType(true);
 
-        icicles = new Icicles(viewport, difficulty);
+        icicles = new Icicles(viewport, game.difficulty);
         player = new Player(viewport);
         stillPlaying = true;
 
@@ -80,12 +82,18 @@ public class IciclesScreen implements Screen {
         float hudHeight = hudViewport.getWorldHeight();
         float hudWidth = hudViewport.getWorldWidth();
         String message = String.format("Player Deaths: %d\nDifficulty: %s",
-                player.getDeaths(), difficulty);
+                player.getDeaths(), game.difficulty);
         font.draw(batch, message, Hud.MARGIN, hudHeight - Hud.MARGIN);
         message = String.format("Score: %d\nHigh Score: %d", icicles.getScore(), highScore);
         font.draw(batch, message, hudWidth - Hud.MARGIN, hudHeight - Hud.MARGIN,
                 0, Align.right, false);
         batch.end();
+    }
+
+    @Override
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        game.showDifficultyScreen();
+        return true;
     }
 
     @Override
