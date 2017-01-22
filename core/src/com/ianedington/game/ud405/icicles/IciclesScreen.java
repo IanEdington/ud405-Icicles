@@ -79,12 +79,12 @@ public class IciclesScreen extends InputAdapter implements Screen {
         hudViewport.apply();
         batch.setProjectionMatrix(hudViewport.getCamera().combined);
         batch.begin();
+        String message = "Player Deaths: " + player.getDeaths()
+                + "\nDifficulty: " + game.difficulty;
         float hudHeight = hudViewport.getWorldHeight();
-        float hudWidth = hudViewport.getWorldWidth();
-        String message = String.format("Player Deaths: %d\nDifficulty: %s",
-                player.getDeaths(), game.difficulty);
         font.draw(batch, message, Hud.MARGIN, hudHeight - Hud.MARGIN);
-        message = String.format("Score: %d\nHigh Score: %d", icicles.getScore(), highScore);
+        message = "Score: " + icicles.getScore() + "\nHigh Score: " + highScore;
+        float hudWidth = hudViewport.getWorldWidth();
         font.draw(batch, message, hudWidth - Hud.MARGIN, hudHeight - Hud.MARGIN,
                 0, Align.right, false);
         batch.end();
